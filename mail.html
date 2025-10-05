@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Arya Code</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>ARYA CODE</h1>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="resume.html">RESUME</a>
+      <a href="interests.html">INTERESTS</a>
+      <a href="hobbies.html">HOBBIES</a>
+      <a href="docs.html">DOCS</a>
+    </nav>
+    <button class="btn-signing">SIGN-IN</button>
+  </header>
+
+  <main>
+    <div class="content" style="margin-top: 5rem;">
+      <h1>Get in Touch</h1>
+      <p class="description" style="letter-spacing: normal;">
+        You can contact me directly through my email below 👇
+      </p>
+
+      <div style="margin-top: 2rem;">
+        <h2 style="font-weight: normal; color: white;">📧 arya.sohoni@gmail.com</h2>
+
+        <div class="buttons" style="margin-top: 1.5rem; flex-wrap: wrap;">
+          <button class="btn-get-started" id="copyEmailBtn">COPY EMAIL</button>
+          <a href="https://mail.google.com/mail/u/0/" 
+             class="btn-get-main">OPEN MAIL APP ⤴</a>
+        </div>
+
+        <p id="copyMessage" style="margin-top: 1rem; color: lime; display: none;">Email copied ✅</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const copyBtn = document.getElementById('copyEmailBtn');
+    const copyMessage = document.getElementById('copyMessage');
+    const email = "arya.sohoni@gmail.com"; // change if needed
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(email).then(() => {
+        copyMessage.style.display = 'block';
+        setTimeout(() => {
+          copyMessage.style.display = 'none';
+        }, 2000);
+      });
+    });
+  </script>
+</body>
+</html>
